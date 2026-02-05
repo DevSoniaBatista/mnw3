@@ -174,9 +174,9 @@ export default function Home() {
                   Desenvolva suas habilidades. Acesse cursos, trilhas de
                   aprendizado e conteúdos exclusivos sobre Web3.
                 </p>
-                <button className="mt-4 text-sm font-semibold text-secondary rounded-lg">
+                <Link href="/crescer" className="mt-4 inline-block text-sm font-semibold text-secondary rounded-lg hover:underline">
                   Saiba mais →
-                </button>
+                </Link>
               </div>
               <div
                 id="construir"
@@ -192,9 +192,9 @@ export default function Home() {
                   Transforme ideias em realidade. Participe de projetos,
                   hackathons e construa o futuro da Web3.
                 </p>
-                <button className="mt-4 text-sm font-semibold text-secondary rounded-lg">
+                <Link href="/construir" className="mt-4 inline-block text-sm font-semibold text-secondary rounded-lg hover:underline">
                   Saiba mais →
-                </button>
+                </Link>
               </div>
             </div>
           </div>
