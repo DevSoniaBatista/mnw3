@@ -274,9 +274,9 @@ export default function Home() {
               <p className="text-sm font-semibold">
                 — Mariana Silva, Desenvolvedora Blockchain
               </p>
-              <button className="text-sm font-semibold text-white rounded-lg">
-                Ver mais depoimentos →
-              </button>
+              <Link href="/vozes" className="text-sm font-semibold text-white rounded-lg">
+                  Saiba mais →
+                </Link>
             </div>
             <div className="flex-1">
               <div className="relative mx-auto max-w-md overflow-hidden rounded-3xl bg-black">
