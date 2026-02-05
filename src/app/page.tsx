@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { ArrowRight, Heart, TrendingUp, Wrench } from 'lucide-react'
+import { pixelFont } from '@/app/layout'
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ export default function Home() {
           </div>
 
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center text-white">
-            <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl leading-tight tracking-[0.2em] mb-6">
+            <h1 className={`${pixelFont.className} uppercase text-2xl md:text-3xl lg:text-3xl leading-tight tracking-[0.2em] mb-6`}>
               VOCÊ PERTENCE
               <br />
               AO FUTURO.

@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import { Titillium_Web } from "next/font/google";
-import "@fontsource/titillium-web/400.css";
-import "@fontsource/titillium-web/600.css";
-import "@fontsource/titillium-web/700.css";
+import { Press_Start_2P } from 'next/font/google'
+
 import "./globals.css";
 
-const titillium = Titillium_Web({
+export const pixelFont = Press_Start_2P({
+  weight: '400',
+  subsets: ['latin'],
+})
+
+export const titillium = Titillium_Web({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   weight: ["400", "600", "700"],
@@ -23,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${titillium.variable} antialiased`}>{children}</body>
+      <body className={`${titillium.variable} ${pixelFont.className} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

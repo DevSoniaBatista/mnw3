@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Instagram, Linkedin, Twitter, Youtube, ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -10,17 +11,13 @@ export default function Footer() {
           {/* Left Column - Branding & About */}
           <div className="space-y-4">
             <div className="flex items-baseline gap-1">
-              <span className="text-lg font-semibold" style={{ color: '#A052E7' }}>mulheres</span>
-              <span className="text-sm font-medium" style={{ color: '#A052E7' }}>na</span>
-              <span className="font-heading text-xl tracking-[0.2em] uppercase" style={{ color: '#FF8C00' }}>
-                WEB3
-              </span>
+            <Image src="/images/logo-footer1.png" alt="Mulheres na Web3" width={200} height={200} />
             </div>
             <p className="text-sm text-[#CCCCCC] max-w-sm">
               Movimento coletivo de mulheres construindo o futuro descentralizado.
             </p>
             <Link 
-              href="/manifesto" 
+              href="/pertencer" 
               className="inline-flex items-center text-sm font-medium transition-colors hover:opacity-80"
               style={{ color: '#FF8C00' }}
             >
@@ -34,23 +31,28 @@ export default function Footer() {
             <h4 className="text-base font-semibold mb-4 text-white">Navegação</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#pertencer" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
+                <Link href="/pertencer" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
                   Pertencer
                 </Link>
               </li>
               <li>
-                <Link href="#crescer" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
+                <Link href="/crescer" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
                   Crescer
                 </Link>
               </li>
               <li>
-                <Link href="#construir" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
+                <Link href="/construir" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
                   Construir
                 </Link>
               </li>
               <li>
-                <Link href="#vozes" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
+                <Link href="/vozes" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
                   Vozes da Comunidade
+                </Link>
+              </li>
+              <li>
+                <Link href="/calendario" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
+                  Calendário e Avisos
                 </Link>
               </li>
             </ul>

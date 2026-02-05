@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 
 export default function Header() {
@@ -10,10 +11,10 @@ export default function Header() {
   const menuItems = [
     { name: 'Home', href: '/' },
     { name: 'Pertencer', href: '/pertencer' },
-    { name: 'Crescer', href: '/#crescer' },
-    { name: 'Construir', href: '/#construir' },
-    { name: 'Vozes', href: '/#vozes' },
-    { name: 'Calendário', href: '/#calendario' },
+    { name: 'Crescer', href: '/crescer' },
+    { name: 'Construir', href: '/construir' },
+    { name: 'Vozes', href: '/vozes' },
+    { name: 'Calendário', href: '/calendario' },
     { name: 'Contato', href: '/#contact' },
   ]
 
@@ -23,11 +24,12 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-baseline gap-1">
-              <span className="text-lg font-semibold text-white">mulheres</span>
+              {/* <span className="text-lg font-semibold text-white">mulheres</span>
               <span className="text-xs font-medium text-white">na</span>
               <span className="font-heading text-2xl tracking-[0.2em] text-secondary uppercase">
                 WEB3
-              </span>
+              </span> */}
+              <Image src="/images/logo.png" alt="Mulheres na Web3" width={200} height={200} />
             </Link>
           </div>
           
@@ -36,7 +38,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+                className="text-sm font-bold text-white/80 hover:text-white transition-colors"
               >
                 {item.name}
               </Link>
