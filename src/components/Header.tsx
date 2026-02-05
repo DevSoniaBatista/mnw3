@@ -15,7 +15,7 @@ export default function Header() {
     { name: 'Construir', href: '/construir' },
     { name: 'Vozes', href: '/vozes' },
     { name: 'Calendário', href: '/calendario' },
-    { name: 'Contato', href: '/#contact' },
+    { name: 'Contato', href: '/#' },
   ]
 
   return (
