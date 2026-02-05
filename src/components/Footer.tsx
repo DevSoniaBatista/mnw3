@@ -63,17 +63,17 @@ export default function Footer() {
             <h4 className="text-base font-semibold mb-4 text-white">Contato</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#contact" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
+                <Link href="/" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
                   Fale Conosco
                 </Link>
               </li>
               <li>
-                <Link href="/imprensa" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
+                <Link href="/" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
                   Imprensa
                 </Link>
               </li>
               <li>
-                <Link href="/colaboracoes" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
+                <Link href="/" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
                   Colaborações
                 </Link>
               </li>
@@ -124,10 +124,10 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div className="flex items-center gap-6">
-            <Link href="/politica-privacidade" className="text-xs text-[#CCCCCC] hover:text-white transition-colors">
+            <Link href="/" className="text-xs text-[#CCCCCC] hover:text-white transition-colors">
               Política de Privacidade
             </Link>
-            <Link href="/termos-uso" className="text-xs text-[#CCCCCC] hover:text-white transition-colors">
+            <Link href="/" className="text-xs text-[#CCCCCC] hover:text-white transition-colors">
               Termos de Uso
             </Link>
           </div>
