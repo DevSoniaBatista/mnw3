@@ -65,9 +65,9 @@ export default function Footer() {
             <h4 className="text-base font-semibold mb-4 text-white">Contato</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
+                <a href="mailto:mulheresnaweb3.0@gmail.com?subject=Contato via Site - Mulheres na Web3" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
                   Fale Conosco
-                </Link>
+                </a>
               </li>
               <li>
                 <Link href="/" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
