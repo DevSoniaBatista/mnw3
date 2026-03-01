@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Heart, Users, Target, Zap, Check, ArrowRight, Linkedin } from 'lucide-react'
-import { pixelFont } from '@/app/layout'
+import { pixelFont } from '@/app/fonts'
 
 const teamMembers = [
   {

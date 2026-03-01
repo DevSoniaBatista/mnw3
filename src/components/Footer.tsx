@@ -1,6 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import { Instagram, Linkedin, Twitter, Youtube, ArrowRight } from 'lucide-react'
 import Image from 'next/image'
+import NewsletterForm from './NewsletterForm'
 
 export default function Footer() {
   return (
@@ -60,26 +63,28 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Right Column - Contact */}
-          <div>
-            <h4 className="text-base font-semibold mb-4 text-white">Contato</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="mailto:mulheresnaweb3.0@gmail.com?subject=Contato via Site - Mulheres na Web3" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
-                  Fale Conosco
-                </a>
-              </li>
-              <li>
-                <Link href="/" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
-                  Assinatura Newsletter
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
-                  Colaborações
-                </Link>
-              </li>
-            </ul>
+          {/* Right Column - Contact & Newsletter */}
+          <div className="space-y-6">
+            <div>
+              <h4 className="text-base font-semibold mb-4 text-white">Contato</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/contato" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
+                    Fale Conosco
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
+                    Colaborações
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="pt-2">
+              <h4 className="text-sm font-semibold mb-3 text-white/90">Assine nossa Newsletter</h4>
+              <NewsletterForm />
+            </div>
           </div>
         </div>
 

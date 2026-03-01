@@ -15,7 +15,7 @@ export default function Header() {
     { name: 'Construir', href: '/construir' },
     // { name: 'Vozes', href: '/vozes' },
     { name: 'Calendário', href: '/calendario' },
-    { name: 'Contato', href: 'mailto:mulheresnaweb3.0@gmail.com?subject=Contato via Site - Mulheres na Web3' },
+    { name: 'Contato', href: '/contato' },
   ]
 
   return (
@@ -34,25 +34,15 @@ export default function Header() {
           </div>
           
           <div className="hidden md:flex items-center gap-8">
-            {menuItems.map((item) => 
-              item.href.startsWith('mailto:') ? (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm font-bold text-white/80 hover:text-white transition-colors"
-                >
-                  {item.name}
-                </a>
-              ) : (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm font-bold text-white/80 hover:text-white transition-colors"
-                >
-                  {item.name}
-                </Link>
-              )
-            )}
+            {menuItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-sm font-bold text-white/80 hover:text-white transition-colors"
+              >
+                {item.name}
+              </Link>
+            ))}
             <a
               href="#join-us"
               className="bg-secondary px-5 py-2 text-sm font-semibold text-white shadow-md shadow-secondary/40 transition-colors hover:bg-secondary/90 rounded-lg"
@@ -76,26 +66,16 @@ export default function Header() {
       {isOpen && (
         <div className="md:hidden bg-background border-t border-gray-100 absolute w-full">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
-            {menuItems.map((item) => 
-              item.href.startsWith('mailto:') ? (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50"
-                >
-                  {item.name}
-                </a>
-              ) : (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50"
-                >
-                  {item.name}
-                </Link>
-              )
-            )}
+            {menuItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50"
+              >
+                {item.name}
+              </Link>
+            ))}
             <a
               href="#join-us"
               onClick={() => setIsOpen(false)}
