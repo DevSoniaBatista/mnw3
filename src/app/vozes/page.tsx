@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Quote, Star } from 'lucide-react'
-import { pixelFont } from '@/app/layout'
+import { pixelFont } from '@/app/fonts'
 
 export default function VozesPage() {
   return (

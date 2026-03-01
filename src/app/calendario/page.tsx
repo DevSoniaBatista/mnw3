@@ -1,8 +1,11 @@
+'use client'
+
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { Calendar as CalendarIcon, Clock, MapPin, Users, Wrench, Trophy, GraduationCap, Mic } from 'lucide-react'
-import { pixelFont } from '@/app/layout'
+import { pixelFont } from '@/app/fonts'
+import NewsletterForm from '@/components/NewsletterForm'
 
 export default function CalendarioPage() {
   return (
@@ -225,15 +228,10 @@ export default function CalendarioPage() {
                 Receba atualizações em tempo real
               </h3>
               <p className="mt-2 text-center text-xs md:text-sm text-gray-700">
-                Entre no nosso Discord e Telegram para não perder nenhum aviso ou oportunidade
+                Se cadastre em nossa newsletter para não perder nenhum aviso ou oportunidade.
               </p>
-              <div className="mt-6 flex justify-center gap-3">
-                <Link href="#" className="inline-flex items-center justify-center rounded-md bg-secondary px-6 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-secondary/90">
-                  Entrar no Discord
-                </Link>
-                <Link href="#" className="inline-flex items-center justify-center rounded-md border border-primary px-6 py-2 text-xs font-semibold text-primary shadow-sm transition hover:bg-primary/10">
-                  Entrar no Telegram
-                </Link>
+              <div className="mt-8 flex justify-center">
+                <NewsletterForm />
               </div>
             </div>
           </div>

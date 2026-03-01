@@ -2,7 +2,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { BookOpen, Award, FileText, Download } from 'lucide-react'
-import { pixelFont } from '@/app/layout'
+import { pixelFont } from '@/app/fonts'
 
 export default function CrescerPage() {
   return (
