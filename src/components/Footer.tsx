@@ -17,7 +17,9 @@ export default function Footer() {
               Movimento coletivo de mulheres construindo o futuro descentralizado.
             </p>
             <Link 
-              href="/pertencer" 
+              href="https://bit.ly/ManifestoMW3"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center text-sm font-medium transition-colors hover:opacity-80"
               style={{ color: '#FF8C00' }}
             >
