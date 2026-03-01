@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Rocket, Users, BadgeCheck, Hammer, CheckCircle } from 'lucide-react'
 import { pixelFont } from '@/app/layout'
 
@@ -140,26 +141,39 @@ export default function ConstruirPage() {
         <section className="bg-gradient-to-b from-[#fbeae2] via-[#f3e7fb] to-[#eadcf7] py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center mb-6">
-              Parcerias e Apoiadores
+              Ecossistema
             </h2>
             <p className="text-center md:text-lg text-gray-700">
               Empresas e organizações que apoiam nosso movimento
             </p>
-            <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <div className="mt-8 flex justify-center">
               {[
-                { name: 'Ethereum Foundation', sub: 'Apoio Técnico' },
-                { name: 'Polygon', sub: 'Grant Programa' },
-                { name: 'Chainlink', sub: 'Educação' },
-                { name: 'Binance', sub: 'Patrocínio' },
-                { name: 'Filecoin', sub: 'Infraestrutura' },
-                { name: 'Aave', sub: 'Mentoria' },
+                { 
+                  name: 'Web3EduBrasil', 
+                  sub: 'Impulsionando a Inovação na Web3',
+                  logo: '/images/partner/web3edubrasil.png'
+                },
               ].map((p) => (
-                <div key={p.name} className="rounded-2xl bg-white px-6 py-5 shadow-sm ring-1 ring-gray-100 flex items-center justify-between">
-                  <div>
-                    <div className="text-sm font-semibold text-foreground">{p.name}</div>
-                    <div className="text-xs text-gray-600">{p.sub}</div>
+                <div key={p.name} className="max-w-md w-full rounded-2xl bg-white px-6 py-5 shadow-sm ring-1 ring-gray-100 flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-4">
+                    {p.logo ? (
+                      <div className="relative h-20 w-32 flex-shrink-0 overflow-hidden rounded-lg bg-gray-50/50 p-2">
+                        <Image
+                          src={p.logo}
+                          alt={p.name}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                    ) : (
+                      <BadgeCheck className="h-12 w-12 text-secondary flex-shrink-0" />
+                    )}
+                    <div>
+                      <div className="text-sm font-semibold text-foreground">{p.name}</div>
+                      <div className="text-xs text-gray-600">{p.sub}</div>
+                    </div>
                   </div>
-                  <BadgeCheck className="h-5 w-5 text-secondary" />
+                  <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0" />
                 </div>
               ))}
             </div>
@@ -240,9 +254,9 @@ export default function ConstruirPage() {
             <h3 className="text-base md:text-lg font-semibold">Pronta para construir?</h3>
             <p className="mt-2 text-xs text-white/90">Escolha um projeto e comece a contribuir hoje mesmo</p>
             <div className="mt-6 flex justify-center gap-3">
-              <Link href="#" className="inline-flex items-center justify-center rounded-md bg-white px-5 py-2 text-xs font-semibold text-primary shadow-sm transition hover:bg-white/90">
+              {/* <Link href="#" className="inline-flex items-center justify-center rounded-md bg-white px-5 py-2 text-xs font-semibold text-primary shadow-sm transition hover:bg-white/90">
                 Ver Projetos Ativos
-              </Link>
+              </Link> */}
               <Link href="#" className="inline-flex items-center justify-center rounded-md border border-white px-5 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-white/10">
                 Propor um Projeto
               </Link>

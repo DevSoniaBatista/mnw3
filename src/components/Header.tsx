@@ -11,9 +11,9 @@ export default function Header() {
   const menuItems = [
     { name: 'Home', href: '/' },
     { name: 'Pertencer', href: '/pertencer' },
-    { name: 'Crescer', href: '/crescer' },
+    // { name: 'Crescer', href: '/crescer' },
     { name: 'Construir', href: '/construir' },
-    { name: 'Vozes', href: '/vozes' },
+    // { name: 'Vozes', href: '/vozes' },
     { name: 'Calendário', href: '/calendario' },
     { name: 'Contato', href: '/#' },
   ]

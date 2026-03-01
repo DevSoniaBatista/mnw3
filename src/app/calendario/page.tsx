@@ -131,7 +131,7 @@ export default function CalendarioPage() {
           </div>
         </section>
 
-        <section className="bg-white py-20 md:py-24">
+        {/* <section className="bg-white py-20 md:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-2xl bg-background p-8 ring-1 ring-gray-200 shadow-sm">
               <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center">
@@ -180,9 +180,9 @@ export default function CalendarioPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section className="bg-white py-20 md:py-24">
+        {/* <section className="bg-white py-20 md:py-24">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center">
               Avisos e Recados
@@ -216,7 +216,7 @@ export default function CalendarioPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="bg-white py-12 mb-16">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

@@ -197,7 +197,7 @@ export default function VozesPage() {
           </div>
         </section>
 
-        <section className="bg-gradient-to-b from-[#fbeae2] via-[#f3e7fb] to-[#eadcf7] py-20">
+        {/* <section className="bg-gradient-to-b from-[#fbeae2] via-[#f3e7fb] to-[#eadcf7] py-20">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center mb-6">
               Anúncios da Comunidade
@@ -233,7 +233,7 @@ export default function VozesPage() {
               </Link>
             </div>
           </div>
-        </section>
+        </section> */}
 
       </main>
 

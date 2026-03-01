@@ -1,8 +1,36 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { Heart, Users, Target, Zap, Check, ArrowRight } from 'lucide-react'
+import Image from 'next/image'
+import { Heart, Users, Target, Zap, Check, ArrowRight, Linkedin } from 'lucide-react'
 import { pixelFont } from '@/app/layout'
+
+const teamMembers = [
+  {
+    name: "Sonia Batista",
+    bio: "Mais de 25 anos de experiência em desenvolvimento de software. Especialista em Smart Contract e MVP de projetos Web3. Palestrante em eventos de Web3 e Blockchain.",
+    image: "/image/team/sonia.jpg",
+    linkedin: "https://www.linkedin.com/in/soniamarabatista/"
+  },
+  {
+    name: "Valéria Oliveira",
+    bio: "Graduada em Marketing Digital e pós-graduanda em UX e Design de Produtos Digitais. Vice-presidente da Web3EduBrasil, atua simplificando linguagens técnicas para ampliar oportunidades e fortalecer o protagonismo feminino na Web3.",
+    image: "/image/team/valeria.jpg",
+    linkedin: "https://www.linkedin.com/in/oliveiravaléria/"
+  },
+  {
+    name: "Mariana Weber",
+    bio: "UX & Product Designer com 8+ anos de experiência em produtos digitais. Atua com UX, Product Design, Service Design e Design Systems, criando experiências centradas no usuário para SaaS, B2C e AI products.",
+    image: "/image/team/mariana.jpg",
+    linkedin: "https://www.linkedin.com/in/marianapweber/"
+  },
+  {
+    name: "Gabriela Fortunato",
+    bio: "Farmacêutica, pós-graduada em Farmácia Estética, com experiência em terapias injetáveis, no SUS e background em tecnologia. Atua no ecossistema de tecnologia, com participação em eventos de blockchain, Web3 e startups. Estuda Inteligência Artificial e comunidades. Acredita na força do 'nós' para gerar impacto real através das comunidades.",
+    image: "/image/team/gabriela.jpg",
+    linkedin: "https://www.linkedin.com/in/gabriela-boaventura-fortunato-0b3063144/"
+  }
+];
 
 export default function PertencerPage() {
   return (
@@ -75,7 +103,7 @@ export default function PertencerPage() {
                   </div>
                   <h4 className="text-sm font-semibold text-foreground">Inclusão</h4>
                   <p className="mt-2 text-xs text-gray-600">
-                    Acreditamos que todas as mulheres têm espaço na Web3, independente de background técnico.
+                    Acreditamos que todas as mulheres têm espaço, independente de background técnico.
                   </p>
                 </div>
 
@@ -135,27 +163,61 @@ export default function PertencerPage() {
 
         {/* Quem Somos Section */}
         <section className="bg-white py-20 md:py-24">
-          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-center text-3xl md:text-4xl font-semibold text-foreground">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-center text-3xl md:text-4xl font-semibold text-foreground mb-16">
               Quem Somos
             </h2>
 
-            <div className="mt-12 grid gap-10 md:grid-cols-2">
+            {/* <div className="grid gap-10 md:grid-cols-2 mb-20">
               <div>
-                <h3 className="text-sm font-semibold text-foreground">Nossa História</h3>
+                <h3 className="text-lg font-semibold text-foreground">Nossa História</h3>
                 <p className="mt-4 text-sm leading-relaxed text-gray-700">
                 Nascemos em 2023 da união de mulheres apaixonadas por Web3 que perceberam a necessidade de criar um movimento estruturado de inclusão e capacitação. O que começou como um grupo de estudos se transformou em uma comunidade ativa com centenas de membros, projetos em andamento e impacto mensurável no ecossistema blockchain brasileiro.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-sm font-semibold text-foreground">Visão de Futuro</h3>
+                <h3 className="text-lg font-semibold text-foreground">Visão de Futuro</h3>
                 <p className="mt-4 text-sm leading-relaxed text-gray-700">
                 Sonhamos com um ecossistema Web3 onde a representatividade feminina seja a norma, não a exceção. Onde mulheres ocupem posições de liderança, desenvolvam tecnologias inovadoras e sejam protagonistas na construção do futuro descentralizado.
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-gray-700">
                 Nosso objetivo é que, até 2030, possamos dobrar a participação feminina em Web3 no Brasil e servir de modelo para iniciativas similares ao redor do mundo.
                 </p>
+              </div>
+            </div> */}
+
+            {/* Team Grid */}
+            <div className="mt-20">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                {teamMembers.map((member) => (
+                  <div key={member.name} className="flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <div className="relative mb-6 self-center">
+                      {/* Purple glow effect */}
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#7c3aed] to-[#db2777] blur-md opacity-60 scale-110" />
+                      <div className="relative h-40 w-40 overflow-hidden rounded-full border-2 border-white/20 shadow-xl">
+                        <Image
+                          src={member.image}
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground w-full text-center">{member.name}</h3>
+                    <Link
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mb-3 text-secondary hover:text-secondary/80 transition-colors w-full flex justify-center"
+                    >
+                      <Linkedin className="h-4 w-4" />
+                    </Link>
+                    <p className="text-xs leading-relaxed text-gray-600 px-2 sm:px-0 text-left text-justify">
+                      {member.bio}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -177,13 +239,13 @@ export default function PertencerPage() {
               <div className="rounded-xl bg-white p-8 shadow-md ring-1 ring-black/5">
                 <h3 className="text-sm font-semibold text-foreground">Entrar na Comunidade</h3>
                 <p className="mt-3 text-xs leading-relaxed text-gray-600">
-                  Junte-se ao nosso Discord, Telegram ou grupo de WhatsApp e conecte-se com outras mulheres.
+                  Junte-se à nossa comunidade e conecte-se com outras mulheres.
                 </p>
                 <Link
                   href="/#join-us"
                   className="mt-6 inline-flex items-center justify-center rounded-md bg-secondary px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-secondary/90"
                 >
-                  Acessar Discord
+                  Acessar Comunidade
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
@@ -202,29 +264,9 @@ export default function PertencerPage() {
                 </Link>
               </div>
             </div>
-
-            <div className="mt-10 text-center text-xs font-semibold text-foreground">
-              <div className="grid gap-6 md:grid-cols-2">
-                <div>Contribuir com ideias</div>
-                <div>Apoiar o Movimento</div>
-              </div>
-            </div>
           </div>
 
-          <div className="mt-12 bg-gradient-to-r from-secondary via-primary to-[#7c3aed] py-10">
-            <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center text-white">
-              <h3 className="text-base md:text-lg font-semibold">Pronta para fazer parte?</h3>
-              <p className="mt-2 text-xs text-white/90">
-                Junte-se a centenas de mulheres que já estão construindo o futuro da Web3
-              </p>
-              <Link
-                href="/#join-us"
-                className="mt-6 inline-flex items-center justify-center rounded-md bg-white px-5 py-2 text-xs font-semibold text-primary shadow-sm transition hover:bg-white/90"
-              >
-                Entrar na Comunidade
-              </Link>
-            </div>
-          </div>
+
         </section>
       </main>
 

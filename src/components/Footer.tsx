@@ -35,21 +35,21 @@ export default function Footer() {
                   Pertencer
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/crescer" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
                   Crescer
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/construir" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
                   Construir
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/vozes" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
                   Vozes da Comunidade
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/calendario" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
                   Calendário e Avisos
@@ -69,7 +69,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
-                  Imprensa
+                  Assinatura Newsletter
                 </Link>
               </li>
               <li>
