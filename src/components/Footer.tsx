@@ -1,9 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import { Instagram, Linkedin, Twitter, Youtube, ArrowRight } from 'lucide-react'
+import { Instagram, Linkedin, Twitter, Youtube, ArrowRight, MessageCircle } from 'lucide-react'
 import Image from 'next/image'
 import NewsletterForm from './NewsletterForm'
+import { COMMUNITY_LINK } from '@/constants/links'
 
 export default function Footer() {
   return (
@@ -95,6 +96,14 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-4">
           {/* Social Media Icons */}
           <div className="flex items-center gap-6">
+            <a 
+              href={COMMUNITY_LINK}
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-[#CCCCCC] hover:text-white transition-colors"
+            >
+              <MessageCircle size={20} />
+            </a>
             <a 
               href="https://twitter.com/mulheresnaweb3" 
               target="_blank" 

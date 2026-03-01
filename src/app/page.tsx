@@ -7,6 +7,7 @@ import Footer from '@/components/Footer'
 import { ArrowRight, Heart, TrendingUp, Wrench } from 'lucide-react'
 import { pixelFont } from '@/app/fonts'
 import NewsletterForm from '@/components/NewsletterForm'
+import { COMMUNITY_LINK } from '@/constants/links'
 
 export default function Home() {
   return (
@@ -40,7 +41,9 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a
-                href="#join-us"
+                href={COMMUNITY_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-secondary px-8 py-3 text-sm md:text-base font-semibold text-white shadow-lg shadow-secondary/40 transition hover:bg-secondary/90 rounded-lg"
               >
                 Entrar na Comunidade
@@ -346,7 +349,9 @@ export default function Home() {
               diverso e inclusivo na Web3.
             </p>
             <a
-              href="#join-us"
+              href={COMMUNITY_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-8 inline-flex items-center justify-center bg-secondary px-8 py-3 text-sm md:text-base font-semibold text-white shadow-md transition hover:bg-secondary/90 rounded-lg"
             >
               Começar agora

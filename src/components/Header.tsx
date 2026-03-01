@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
+import { COMMUNITY_LINK } from '@/constants/links'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -44,7 +45,9 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href="#join-us"
+              href={COMMUNITY_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-secondary px-5 py-2 text-sm font-semibold text-white shadow-md shadow-secondary/40 transition-colors hover:bg-secondary/90 rounded-lg"
             >
               Entrar na Comunidade
@@ -77,7 +80,9 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href="#join-us"
+              href={COMMUNITY_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
               className="block w-full text-center mt-4 bg-primary text-primary-foreground px-4 py-3 font-medium hover:bg-primary/90 transition-colors rounded-lg"
             >
