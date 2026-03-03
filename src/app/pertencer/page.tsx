@@ -10,25 +10,25 @@ const teamMembers = [
   {
     name: "Sonia Batista",
     bio: "Mais de 25 anos de experiência em desenvolvimento de software. Especialista em Smart Contract e MVP de projetos Web3. Palestrante em eventos de Web3 e Blockchain.",
-    image: "/image/team/sonia.jpg",
+    image: "/images/team/sonia.png",
     linkedin: "https://www.linkedin.com/in/soniamarabatista/"
   },
   {
     name: "Valéria Oliveira",
     bio: "Graduada em Marketing Digital e pós-graduanda em UX e Design de Produtos Digitais. Vice-presidente da Web3EduBrasil, atua simplificando linguagens técnicas para ampliar oportunidades e fortalecer o protagonismo feminino na Web3.",
-    image: "/image/team/valeria.jpg",
+    image: "/images/team/valeria.png",
     linkedin: "https://www.linkedin.com/in/oliveiravaléria/"
   },
   {
     name: "Mariana Weber",
     bio: "UX & Product Designer com 8+ anos de experiência em produtos digitais. Atua com UX, Product Design, Service Design e Design Systems, criando experiências centradas no usuário para SaaS, B2C e AI products.",
-    image: "/image/team/mariana.jpg",
+    image: "/images/team/mari.png",
     linkedin: "https://www.linkedin.com/in/marianapweber/"
   },
   {
     name: "Gabriela Fortunato",
     bio: "Farmacêutica, pós-graduada em Farmácia Estética, com experiência em terapias injetáveis, no SUS e background em tecnologia. Atua no ecossistema de tecnologia, com participação em eventos de blockchain, Web3 e startups. Estuda Inteligência Artificial e comunidades. Acredita na força do 'nós' para gerar impacto real através das comunidades.",
-    image: "/image/team/gabriela.jpg",
+    image: "/images/team/gabi.png",
     linkedin: "https://www.linkedin.com/in/gabriela-boaventura-fortunato-0b3063144/"
   }
 ];
