@@ -4,10 +4,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { ArrowRight, Heart, TrendingUp, Wrench } from 'lucide-react'
+import { ArrowRight, Heart, Tag, TrendingUp, Wrench } from 'lucide-react'
 import { pixelFont } from '@/app/fonts'
 import NewsletterForm from '@/components/NewsletterForm'
 import { COMMUNITY_LINK } from '@/constants/links'
+import { communityEvents } from '@/lib/community-events'
 
 export default function Home() {
   return (
@@ -50,7 +51,7 @@ export default function Home() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               <a
-                href="https://bit.ly/ManifestoMW3"
+                href="https://drive.google.com/file/d/1sl8pvCtSvfxuDadgLZKPHV51xq5gr-up/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center border border-white/80 bg-white/90 px-8 py-3 text-sm md:text-base font-semibold text-primary shadow-sm transition hover:bg-white rounded-lg"
@@ -108,8 +109,11 @@ export default function Home() {
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
                 Por que existimos?
               </h2>
+              <p className="mt-6 text-base md:text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                Existimos para criar um ecossistema seguro, diverso e colaborativo onde mulheres ocupam a tecnologia com voz, autonomia, educação e impacto real.
+              </p>
             </div>
-            <div className="grid gap-8 md:grid-cols-3">
+            {/* <div className="grid gap-8 md:grid-cols-3">
               <div className="text-center">
                 <p className="text-3xl md:text-4xl font-bold" style={{ color: '#FF7043' }}>
                   5%
@@ -134,7 +138,7 @@ export default function Home() {
                   do nosso compromisso em <br /> mudar essa realidade
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
 
@@ -309,24 +313,44 @@ export default function Home() {
               Fique por dentro das novidades e oportunidades
             </p>
             <div className="mt-8 space-y-4">
-              {[
-                { title: 'Inscrições abertas: Hackathon Mulheres na Web3 2026', date: '12 Jan 2026', badge: 'Urgente', color: 'ring-secondary' },
-                { title: 'Nova trilha de aprendizado: DeFi do Zero', date: '11 Jan 2026', color: 'ring-[#6f42c1]' },
-                { title: 'Meetup presencial em São Paulo - 20/Jan', date: '10 Jan 2026', color: 'ring-primary' },
-              ].map((n) => (
-                <div key={n.title} className={`rounded-2xl bg-white px-6 py-6 shadow-sm ring-2 ${n.color}`}>
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <div className="text-sm font-semibold text-foreground">{n.title}</div>
-                      <div className="text-[11px] text-gray-600 mt-1">{n.date}</div>
-                    </div>
-                    {n.badge && (
-                      <span className="inline-flex rounded-full bg-secondary px-3 py-1 text-[11px] font-semibold text-white">
-                        {n.badge}
-                      </span>
+              {communityEvents.filter(e => e.isFeatured || e.type === 'anuncio').map((n) => (
+                <Link href={n.link || '#'} key={n.title} target="_blank" className={`block rounded-2xl bg-white px-6 py-6 shadow-sm ring-2 ${n.color} transition hover:shadow-md`}>
+                  <div className="flex items-start gap-4">
+                    {n.image && (
+                      <div className="shrink-0">
+                        <Image
+                          src={n.image}
+                          alt={n.title}
+                          width={80}
+                          height={80}
+                          className="rounded-xl object-cover h-20 w-20"
+                        />
+                      </div>
                     )}
+                    <div className="flex-1">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <div className="text-sm font-semibold text-foreground">{n.title}</div>
+                          <div className="text-[11px] text-gray-600 mt-1">{n.date}</div>
+                        </div>
+                        {n.badge && (
+                          <span className="inline-flex rounded-full bg-secondary px-3 py-1 text-[11px] font-semibold text-white">
+                            {n.badge}
+                          </span>
+                        )}
+                      </div>
+                      {n.description && (
+                        <p className="mt-2 text-xs text-gray-600 line-clamp-2">{n.description}</p>
+                      )}
+                      {n.coupon && (
+                        <div className="mt-2 inline-flex items-center gap-1.5 rounded-lg bg-[#FFF2EC] px-2 py-1 text-[10px] font-bold text-secondary ring-1 ring-secondary/20">
+                          <Tag className="h-3 w-3" />
+                          Cupom: {n.coupon}
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
             <div className="mt-10 text-center flex flex-col items-center">

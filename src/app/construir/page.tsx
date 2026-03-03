@@ -24,7 +24,7 @@ export default function ConstruirPage() {
           </div>
         </section>
 
-        <section className="bg-white py-20 md:py-24">
+        {/* <section className="bg-white py-20 md:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center mb-6">
               Projetos Ativos
@@ -78,9 +78,9 @@ export default function ConstruirPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section className="bg-white py-20 md:py-24">
+        {/* <section className="bg-white py-20 md:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-2xl bg-background p-8 ring-1 ring-gray-200 shadow-sm">
               <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center">
@@ -112,9 +112,9 @@ export default function ConstruirPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section className="bg-white py-16">
+        {/* <section className="bg-white py-16">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center mb-6">
               Nossos Resultados
@@ -136,7 +136,7 @@ export default function ConstruirPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="bg-gradient-to-b from-[#fbeae2] via-[#f3e7fb] to-[#eadcf7] py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -192,7 +192,7 @@ export default function ConstruirPage() {
           </div>
         </section>
 
-        <section className="bg-white py-20 md:py-24">
+        {/* <section className="bg-white py-20 md:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center mb-6">
               Governança
@@ -217,9 +217,9 @@ export default function ConstruirPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section className="bg-white py-12">
+        {/* <section className="bg-white py-12">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-2xl p-8 ring-1 ring-gray-200 bg-gradient-to-r from-[#fff3ea] via-[#f7f0fb] to-[#f4e9ff]">
               <h3 className="text-base md:text-lg font-semibold text-center text-foreground">
@@ -247,7 +247,7 @@ export default function ConstruirPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="bg-gradient-to-r from-secondary via-[#ff7a3d] to-primary py-20 mb-16">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center text-white">
@@ -257,9 +257,14 @@ export default function ConstruirPage() {
               {/* <Link href="#" className="inline-flex items-center justify-center rounded-md bg-white px-5 py-2 text-xs font-semibold text-primary shadow-sm transition hover:bg-white/90">
                 Ver Projetos Ativos
               </Link> */}
-              <Link href="#" className="inline-flex items-center justify-center rounded-md border border-white px-5 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-white/10">
+              <a 
+                href="https://forms.gle/6GSCBSZHPGLEeg6r7" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-md border border-white px-5 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-white/10"
+              >
                 Propor um Projeto
-              </Link>
+              </a>
             </div>
           </div>
         </section>

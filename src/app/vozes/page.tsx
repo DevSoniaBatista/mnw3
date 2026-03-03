@@ -197,43 +197,7 @@ export default function VozesPage() {
           </div>
         </section>
 
-        {/* <section className="bg-gradient-to-b from-[#fbeae2] via-[#f3e7fb] to-[#eadcf7] py-20">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center mb-6">
-              Anúncios da Comunidade
-            </h2>
-            <p className="text-center md:text-lg text-gray-700">
-              Fique por dentro das novidades e oportunidades
-            </p>
-            <div className="mt-8 space-y-4">
-              {[
-                { title: 'Inscrições abertas: Hackathon Mulheres na Web3 2026', date: '12 Jan 2026', badge: 'Urgente', color: 'ring-secondary' },
-                { title: 'Nova trilha de aprendizado: DeFi do Zero', date: '11 Jan 2026', color: 'ring-[#6f42c1]' },
-                { title: 'Meetup presencial em São Paulo - 20/Jan', date: '10 Jan 2026', color: 'ring-primary' },
-              ].map((n) => (
-                <div key={n.title} className={`rounded-2xl bg-white px-6 py-6 shadow-sm ring-2 ${n.color}`}>
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <div className="text-sm font-semibold text-foreground">{n.title}</div>
-                      <div className="text-[11px] text-gray-600 mt-1">{n.date}</div>
-                    </div>
-                    {n.badge && (
-                      <span className="inline-flex rounded-full bg-secondary px-3 py-1 text-[11px] font-semibold text-white">
-                        {n.badge}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-10 text-center">
-              <p className="text-xs text-gray-700">Quer receber anúncios em primeira mão?</p>
-              <Link href="#" className="mt-4 inline-flex items-center justify-center rounded-md bg-secondary px-6 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-secondary/90">
-                Inscrever-se na Newsletter
-              </Link>
-            </div>
-          </div>
-        </section> */}
+
 
       </main>
 

@@ -21,7 +21,7 @@ export default function Footer() {
               Movimento coletivo de mulheres construindo o futuro descentralizado.
             </p>
             <Link 
-              href="https://bit.ly/ManifestoMW3"
+              href="https://drive.google.com/file/d/1sl8pvCtSvfxuDadgLZKPHV51xq5gr-up/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-sm font-medium transition-colors hover:opacity-80"
@@ -58,7 +58,7 @@ export default function Footer() {
               </li> */}
               <li>
                 <Link href="/calendario" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
-                  Calendário e Avisos
+                  Calendário
                 </Link>
               </li>
             </ul>
@@ -75,7 +75,12 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="text-sm text-[#CCCCCC] hover:text-white transition-colors">
+                  <Link 
+                    href="https://forms.gle/szYQAWdB3nZ1pDMQ9" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-[#CCCCCC] hover:text-white transition-colors"
+                  >
                     Colaborações
                   </Link>
                 </li>
@@ -140,10 +145,10 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div className="flex items-center gap-6">
-            <Link href="/" className="text-xs text-[#CCCCCC] hover:text-white transition-colors">
+            <Link href="/politica-de-privacidade" className="text-xs text-[#CCCCCC] hover:text-white transition-colors">
               Política de Privacidade
             </Link>
-            <Link href="/" className="text-xs text-[#CCCCCC] hover:text-white transition-colors">
+            <Link href="/termos-de-uso" className="text-xs text-[#CCCCCC] hover:text-white transition-colors">
               Termos de Uso
             </Link>
           </div>
@@ -152,7 +157,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="text-center mt-8 pt-4">
           <p className="text-xs text-[#CCCCCC]">
-            Construído por mulheres na Web3 © 2026
+            Construído por Mulheres na Web3 © 2026
           </p>
         </div>
       </div>

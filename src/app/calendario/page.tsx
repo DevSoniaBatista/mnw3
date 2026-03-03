@@ -3,9 +3,11 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { Calendar as CalendarIcon, Clock, MapPin, Users, Wrench, Trophy, GraduationCap, Mic } from 'lucide-react'
+import Image from 'next/image'
+import { Calendar as CalendarIcon, Clock, MapPin, Users, Wrench, Trophy } from 'lucide-react'
 import { pixelFont } from '@/app/fonts'
 import NewsletterForm from '@/components/NewsletterForm'
+import { communityEvents } from '@/lib/community-events'
 
 export default function CalendarioPage() {
   return (
@@ -18,7 +20,7 @@ export default function CalendarioPage() {
           <div className="absolute inset-0 opacity-70 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.9),rgba(255,255,255,0)_60%)]" />
           <div className="relative mx-auto max-w-5xl text-center ">
             <h1 className={`${pixelFont.className} pt-16 uppercase text-2xl sm:text-3xl md:text-3xl tracking-[0.2em] text-foreground`}>
-            Calendário e Avisos
+            Calendário
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-xs sm:text-sm text-gray-700">
             Fique por dentro de todos os eventos, <br/> workshops e comunicados da comunidade
@@ -34,72 +36,50 @@ export default function CalendarioPage() {
             <p className="text-center md:text-lg text-gray-700">
               Não perca as próximas oportunidades de aprendizado e networking
             </p>
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {[
-                {
-                  type: 'Workshop',
-                  title: 'Workshop: Introdução a Smart Contracts',
-                  date: '18 Jan 2026',
-                  time: '19:00 - 21:00',
-                  location: 'Online',
-                  spots: '50 vagas disponíveis',
-                },
-                {
-                  type: 'Evento',
-                  title: 'Meetup Presencial - São Paulo',
-                  date: '20 Jan 2026',
-                  time: '14:00 - 18:00',
-                  location: 'São Paulo, SP',
-                  spots: '30 vagas disponíveis',
-                },
-                {
-                  type: 'Hackathon',
-                  title: 'Hackathon Mulheres na Web3',
-                  date: '25-27 Jan 2026',
-                  time: '3 dias',
-                  location: 'Híbrido',
-                  spots: 'Inscrições abertas',
-                }
-              ].map((e) => (
-                <div key={e.title} className="rounded-2xl bg-white px-6 py-6 shadow-lg ring-2 ring-secondary h-full min-h-[300px] flex flex-col">
-                  <div className="flex items-center justify-between">
-                    <span className="inline-flex items-center rounded-full bg-secondary/10 px-3 py-1 text-xs font-semibold text-secondary">
-                      {e.type === 'Workshop' && <Wrench className="mr-1.5 h-3 w-3" />}
-                      {e.type === 'Evento' && <CalendarIcon className="mr-1.5 h-3 w-3" />}
-                      {e.type === 'Hackathon' && <Trophy className="mr-1.5 h-3 w-3" />}
-                      {e.type}
-                    </span>
-                    <span className="inline-flex rounded-full bg-secondary px-3 py-1 text-[11px] font-semibold text-white">
-                      DESTAQUE
-                    </span>
+            <div className="mt-10 flex justify-center">
+              <div className="grid gap-6 md:grid-cols-1 max-w-md w-full">
+                {communityEvents.filter(e => e.type === 'evento').map((e) => (
+                  <div key={e.title} className="rounded-2xl bg-white px-6 py-6 shadow-lg ring-2 ring-secondary h-full min-h-[300px] flex flex-col">
+                    {e.image && <div className="relative h-40 w-full mb-4"><Image src={e.image} alt={e.title} fill className="rounded-xl object-cover" /></div>}
+                    <div className="flex items-center justify-between">
+                      <span className="inline-flex items-center rounded-full bg-secondary/10 px-3 py-1 text-xs font-semibold text-secondary">
+                        {e.type === 'Workshop' && <Wrench className="mr-1.5 h-3 w-3" />}
+                        {(e.type === 'evento' || e.type === 'Evento') && <CalendarIcon className="mr-1.5 h-3 w-3" />}
+                        {e.type === 'Hackathon' && <Trophy className="mr-1.5 h-3 w-3" />}
+                        {e.type.charAt(0).toUpperCase() + e.type.slice(1)}
+                      </span>
+                      {e.badge && <span className="inline-flex rounded-full bg-secondary px-3 py-1 text-[11px] font-semibold text-white">{e.badge}</span>}
+                    </div>
+                    <h3 className="mt-4 text-lg font-semibold text-foreground">{e.title}</h3>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      <span className="inline-flex items-center rounded-full bg-[#ffe6d6] px-3 py-1 text-[11px] font-semibold text-[#f45920] ring-1 ring-[#f45920]/20">
+                        <CalendarIcon className="mr-1.5 h-3 w-3" />
+                        {e.date}
+                      </span>
+                      {e.time && <span className="inline-flex items-center rounded-full bg-[#ffe6d6] px-3 py-1 text-[11px] font-semibold text-[#f45920] ring-1 ring-[#f45920]/20">
+                        <Clock className="mr-1.5 h-3 w-3" />
+                        {e.time}
+                      </span>}
+                      <span className="inline-flex items-center rounded-full bg-[#ffe6d6] px-3 py-1 text-[11px] font-semibold text-[#f45920] ring-1 ring-[#f45920]/20">
+                        <MapPin className="mr-1.5 h-3 w-3" />
+                        {e.location}
+                      </span>
+                      {e.spots && <span className="inline-flex items-center rounded-full bg-[#ffe6d6] px-3 py-1 text-[11px] font-semibold text-[#f45920] ring-1 ring-[#f45920]/20">
+                        <Users className="mr-1.5 h-3 w-3" />
+                        {e.spots}
+                      </span>}
+                    </div>
+                    {e.description && <p className="mt-4 text-sm text-gray-600">{e.description}</p>}
+                    {e.coupon && <div className="mt-4 text-sm font-semibold">Cupom de 10% de desconto: <span className="text-secondary">{e.coupon}</span></div>}
+                    <div className="flex-1" />
+                    <Link href={e.link || '#'} target="_blank" className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-secondary px-6 py-3 text-xs font-semibold text-white shadow-sm transition hover:bg-secondary/90">
+                      {e.link ? 'Garanta sua vaga' : 'Ver detalhes'}
+                    </Link>
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-foreground">{e.title}</h3>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="inline-flex items-center rounded-full bg-[#ffe6d6] px-3 py-1 text-[11px] font-semibold text-[#f45920] ring-1 ring-[#f45920]/20">
-                      <CalendarIcon className="mr-1.5 h-3 w-3" />
-                      {e.date}
-                    </span>
-                    <span className="inline-flex items-center rounded-full bg-[#ffe6d6] px-3 py-1 text-[11px] font-semibold text-[#f45920] ring-1 ring-[#f45920]/20">
-                      <Clock className="mr-1.5 h-3 w-3" />
-                      {e.time}
-                    </span>
-                    <span className="inline-flex items-center rounded-full bg-[#ffe6d6] px-3 py-1 text-[11px] font-semibold text-[#f45920] ring-1 ring-[#f45920]/20">
-                      <MapPin className="mr-1.5 h-3 w-3" />
-                      {e.location}
-                    </span>
-                    <span className="inline-flex items-center rounded-full bg-[#ffe6d6] px-3 py-1 text-[11px] font-semibold text-[#f45920] ring-1 ring-[#f45920]/20">
-                      <Users className="mr-1.5 h-3 w-3" />
-                      {e.spots}
-                    </span>
-                  </div>
-                  <div className="flex-1" />
-                  <Link href="#" className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-secondary px-6 py-3 text-xs font-semibold text-white shadow-sm transition hover:bg-secondary/90">
-                    Inscrever-se
-                  </Link>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {/* <div className="mt-10 grid gap-6 md:grid-cols-3">
               {[
                 { type: 'Mentoria', title: 'Mentoria em Grupo: Carreira Web3', date: '22 Jan 2026', time: '18:00 - 19:30' },
                 { type: 'Palestra', title: 'Palestra: DeFi para Iniciantes', date: '24 Jan 2026', time: '20:00 - 21:00' },
@@ -130,7 +110,7 @@ export default function CalendarioPage() {
                   </Link>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </section>
 
