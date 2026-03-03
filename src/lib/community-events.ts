@@ -11,7 +11,9 @@ export const communityEvents = [
     type: 'evento',
     badge: 'Destaque',
     color: 'ring-primary',
-    isFeatured: true
+    isFeatured: true,
+    time: '',
+    spots: ''
   },
   // { 
   //   title: 'Novo Discord Server Lançado', 
